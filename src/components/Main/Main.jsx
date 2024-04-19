@@ -30,9 +30,9 @@ const Main = () => {
     [currentItems]
   );
 
-  // useEffect(() => {
-  //   return () => dispatch(getProducts());
-  // }, []);
+  useEffect(() => {
+    return () => dispatch(getProducts());
+  }, []);
 
   useEffect(() => {
     const debounced = setTimeout(() => {
@@ -44,7 +44,7 @@ const Main = () => {
   }, [dispatch, filter, search]);
 
   useEffect(() => {
-    dispatch(getProducts());
+    // dispatch(getProducts());
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(products?.slice(itemOffset, endOffset));
      setPageCount(Math.ceil(products?.length === undefined ? 1 : products?.length / itemsPerPage));
