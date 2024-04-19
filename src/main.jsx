@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter
       // eslint-disable-next-line no-undef
       basename={
-        process.env.NODE_ENV === "production" ? "/diplom_durdona/" : "/"
+        process.env.NODE_ENV === "production" ? "/new_diplom/" : "/"
       }
     >
       <Provider store={store}>
