@@ -8,12 +8,15 @@ const initialState = {
 export const getProducts = createAsyncThunk(
   "products/getProducts",
   async () => {
-    const res = await axios.get(`https://dummyjson.com/products?limit=100`);
-    const data = await res.data.products;
-
-    return data;
+    let data = null
+   try {
+     const res = await axios.get(`https://dummyjson.com/products?limit=100`);
+     data = await res.data.products;
+   } catch (error) {
+    console.log('ошибка при запросе на сервере ');
+   }
+  return data;
   }
-
 );
 
 export const githubSlice = createSlice({
